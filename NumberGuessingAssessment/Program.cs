@@ -14,6 +14,7 @@ namespace NumberGuessingAssessment
         {
 
             bool Equel = false;
+            bool Equel2 = false;
             int Min = 1;
             int Max = 101;
 
@@ -32,34 +33,56 @@ namespace NumberGuessingAssessment
                 //Generates random number
                 int rando = rand.Next(Min, Max);
 
-                //Computer will begin guessing by printing its guess
-                Console.WriteLine(rando);
-                Console.WriteLine("");
+                Equel2 = false;
 
-                //The user must specify to the program whether their number is less than, greater than, or equel to its number
-                Console.WriteLine("Is your number greater than(G), less than(L), or equel(E) to this number?");
-
-                choice = Console.ReadLine();
-
-                //If user selects "G" a higher number is generated
-                choice = choice.ToUpper();
-                if (choice == "G")
+                while (!Equel2)
                 {
-                    Min = rando;
-                }
+                    //Computer will begin guessing by printing its guess
+                    Console.WriteLine(rando);
+                    Console.WriteLine("");
 
-                //If user selects "L" a lower number is generated
-                else if (choice == "L")
-                {
-                    Max = rando;
-                }
+                    //The user must specify to the program whether their number is less than, greater than, or equel to its number
+                    Console.WriteLine("Is your number greater than(G), less than(L), or equel(E) to this number?");
 
-                //If user selects "E" the game ends with the program responding with "Game Over"
-                else if (choice == "E")
-                {
-                    Equel = true;
-                    Console.WriteLine("Game Over");
+                    choice = Console.ReadLine();
+
+                    //If user selects "G" a higher number is generated
+                    choice = choice.ToUpper();
+                    if (choice == "G")
+                    {
+                        Equel2 = true;
+                        Min = rando;
+
+                        //If user cheats, display text
+                        if (Min == Max)
+                        {
+                            Console.WriteLine("Stop! You violated the law. Pay the court a fine or serve your sentence. Your stolen numbers are now forfeit.");
+                        }
+                    }
+
+                    //If user selects "L" a lower number is generated
+                    else if (choice == "L")
+                    {
+                        Equel2 = true;
+                        Max = rando;
+
+                        //If user cheats, display text
+                        if (Min == Max)
+                        {
+                            Console.WriteLine("Stop! You violated the law. Pay the court a fine or serve your sentence. Your stolen numbers are now forfeit.");
+                        }
+                    }
+
+                    //If user selects "E" the game ends with the program responding with "Game Over"
+                    else if (choice == "E")
+                    {
+                        Equel = true;
+                        Equel2 = true;
+                        Console.WriteLine("Number Solved");
+                    }
+
                 }
+               
 
             }
 
