@@ -15,6 +15,7 @@ namespace NumberGuessingAssessment
 
             bool Equel = false;
             bool Equel2 = false;
+            int loops = 0;
             int Min = 1;
             int Max = 101;
 
@@ -73,18 +74,21 @@ namespace NumberGuessingAssessment
                         }
                     }
 
-                    //If user selects "E" the game ends with the program responding with "Game Over"
+                    //If user selects "E" the game ends with the program responding with "Number Solved" and number of attempts it took to guess the number
                     else if (choice == "E")
                     {
                         Equel = true;
                         Equel2 = true;
                         Console.WriteLine("Number Solved");
+                        Console.WriteLine("Number of guesses:" + loops);
                     }
 
+                    loops++;
                 }
                
 
             }
+            
 
             Console.ReadLine();
         }
