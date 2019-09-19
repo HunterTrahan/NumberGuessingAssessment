@@ -83,6 +83,12 @@ namespace NumberGuessingAssessment
                         Console.WriteLine("Number of guesses:" + loops);
                     }
 
+                    //If the user selects anything other than G,L,E it will return Invalid
+                    else
+                    {
+                        Console.WriteLine("Invalid");
+                    }
+
                     loops++;
                 }
                

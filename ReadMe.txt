@@ -10,3 +10,6 @@
 			(After the number is printed after pressing "G" or "L", the program will ask you if your number is greater, lower, or equel to again.)
 
 		If you press "E" the program will the state the number has been solved then end.
+
+	Known bugs:
+		When getting closer to guessing your number it will sometimes repeat the same number.
